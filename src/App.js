@@ -3,17 +3,24 @@
 import './index.css'
 import Nav from './Components/Nav';
 import Main from './Components/Main';
-import { PaymentContextprovider } from './Context/Paymentcontext';
+import { PaymentContextProvider } from './Context/Paymentcontext';
+import { Route, Routes } from 'react-router-dom';
+import Payment from './Components/Payment';
 
 function App() {
   return (
-    <PaymentContextprovider>
+    <PaymentContextProvider>
     <div className="App">
       <Nav/>
-      <Main/>
+      
+      <Routes>
+        <Route path='/' element={<Main/>}/>
+        <Route path='/payment' element={<Payment/>} />
+      </Routes>
       
     </div>
-    </PaymentContextprovider>
+    </PaymentContextProvider>
+    
   );
 }
 
